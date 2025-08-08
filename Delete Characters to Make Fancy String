@@ -1,0 +1,22 @@
+class Solution {
+public:
+    string makeFancyString(string s) {
+        int c = 1;
+        string r;
+        r += s[0]; // Add the first character
+
+    for (int i = 1; i < s.size(); i++) {
+        if (s[i] == s[i - 1]) {
+            c++;
+        } else {
+            c = 1; // reset count when characters differ
+        }
+
+        if (c < 3) {
+            r += s[i]; // safely append to string
+        }
+    }
+
+    return r;
+    }
+};
