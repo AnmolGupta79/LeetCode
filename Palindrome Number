@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool isPalindrome(long x) {
+       long a,b,s=0;
+       if(x<0){
+        return false;
+       }
+       a=x;
+       while(x>0){
+       b=x%10;
+       s=s*10+b;
+       x=x/10;
+       }
+       if(s==a){
+       return true;
+       }
+       else{
+        return false;
+       }
+    }
+};
