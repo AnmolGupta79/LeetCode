@@ -1,0 +1,14 @@
+class Solution {
+public:
+    bool isValidSerialization(string p) {
+        stringstream ss(p);
+        string c;
+        int nodes = 1;
+        while (getline(ss, c, ',')) {
+            nodes--;
+            if (nodes < 0) return false;
+            if (c != "#") nodes += 2;
+        }
+        return nodes == 0;
+    }
+};
